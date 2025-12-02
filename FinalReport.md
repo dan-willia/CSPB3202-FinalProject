@@ -41,6 +41,16 @@ The Lunar Lander-v3 environment simulates a spacecraft attempting to land on a f
 - 2: Fire main engine
 - 3: Fire right orientation engine
 
+**Reward Structure:**
+- Moving toward/away from landing pad increases/decreases reward
+- Fuel consumption: -0.03 per frame for side engines, -0.3 per frame for main engine
+- Leg contact: +10 points per leg per frame when touching ground
+- Crash: -100 points
+- Safe landing: Additional +100 points
+- Episode terminates on crash or successful landing, or after 1000 timesteps
+
+An episode is considered a solution when it scores above 200 points. I aimed to achieve an agent which scores above 200 when averaged over 100 episodes.
+
 # Phase 1: Baselines
  
 I first establish some baselines. The first was a random agent, the others were agents trained on the default hyperparameters of the `DQN` model from the `stable_baselines3` library. Their default parameters are based on research, so it seemed like a reasonable place to start. I trained for 100k, 200k, and 300k timesteps on the default `DQN` parameters. 
