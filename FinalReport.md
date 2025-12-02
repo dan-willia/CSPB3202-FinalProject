@@ -74,7 +74,7 @@ Default 300k:
 
 <img src="gifs/lunar_lander_preset3k.gif" width="50%"/>
 
-With the benefit I hindsight, I can see that simply increasing the timesteps would have led to improvements. As I was writing this report, I trained default agents with 400k and 500k timesteps and achieved significant improvements:
+With the benefit I hindsight, I can see that in fact the 300k agent is not simply hovering, but apparently descending very slowly towards the landing pad. It's reasonable to conclude that simply increasing the timesteps could lead to improvements. Indeed, as I was writing this report, I trained default agents with 400k and 500k timesteps and achieved significant improvements:
 
 
 | Baseline | Mean rewards |
@@ -234,7 +234,7 @@ I wanted to try and work backwards to discover what parameters were most importa
 
 ## Ablation experiment 1
 
-I was most curious about the network size. Was I simply doomed from the beginning by not using a big enough network? I tested the optimal hyperparameters with a network size of [64,64].
+I was most curious about the network size. Was I simply doomed from the beginning by not using a big enough network? I tested the optimal hyperparameters with a network size of [64,64] (the default size).
 
 ### Result
 **Mean reward: 130.67 +/- 105.04**
